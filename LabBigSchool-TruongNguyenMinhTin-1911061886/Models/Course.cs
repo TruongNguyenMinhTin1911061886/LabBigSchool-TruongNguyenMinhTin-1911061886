@@ -9,8 +9,10 @@ namespace LabBigSchool_TruongNguyenMinhTin_1911061886.Models
     public class Course
     {
         public int Id { get; set; }
+       
         public ApplicationUser Lecturer { get; set; }
         [Required]
+        
         public string LecturedId { get; set; }
         [Required]
         [StringLength(255)]
