@@ -38,7 +38,7 @@ namespace LabBigSchool_TruongNguyenMinhTin_1911061886.Controllers
             }
             var course = new Course
             {
-                LecturedId = User.Identity.GetUserId(),
+                LecturerId = User.Identity.GetUserId(),
                 DateTime = viewModel.GetDateTime(),
                 CategoryId = viewModel.Category,
                 Place = viewModel.Place
