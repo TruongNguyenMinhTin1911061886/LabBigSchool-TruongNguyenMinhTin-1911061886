@@ -78,7 +78,7 @@ namespace LabBigSchool_TruongNguyenMinhTin_1911061886.Migrations
                 .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
-            
+            //hyuh
             CreateTable(
                 "dbo.Courses",
                 c => new
