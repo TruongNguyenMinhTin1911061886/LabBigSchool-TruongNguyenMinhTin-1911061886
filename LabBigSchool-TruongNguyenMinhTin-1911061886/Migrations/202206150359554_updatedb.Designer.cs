@@ -7,13 +7,13 @@ namespace LabBigSchool_TruongNguyenMinhTin_1911061886.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialModel : IMigrationMetadata
+    public sealed partial class updatedb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(updatedb));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206011014506_InitialModel"; }
+            get { return "202206150359554_updatedb"; }
         }
         
         string IMigrationMetadata.Source
