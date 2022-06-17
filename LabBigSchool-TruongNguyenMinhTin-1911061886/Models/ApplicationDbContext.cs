@@ -12,6 +12,7 @@ namespace LabBigSchool_TruongNguyenMinhTin_1911061886.Models
         public DbSet<Course> Courses { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
+    
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -27,6 +28,9 @@ namespace LabBigSchool_TruongNguyenMinhTin_1911061886.Models
                 .HasRequired(a => a.Course)
                 .WithMany()
                 .WillCascadeOnDelete(false);
+
+          
+
             base.OnModelCreating(modelBuilder);
         }
 
