@@ -1,44 +1,45 @@
 ﻿@model IEnumerable<LabBigSchool_TruongNguyenMinhTin_1911061886.Models.Course>
-    @{ 
-        ViewBag.Title = "Home Page";
-    }
+@{
+    ViewBag.Title = "Home Page";
+}
 <div class="row">
     <ul>
         @foreach (var course in Model)
-            {
-                <li>
-                    @course.DateTime - @course.Lecturer.Name
-                </li>
-            }
+        {
+            <li>
+                @course.DateTime - @course.Lecturer.Name
+            </li>
+        }
     </ul>
     <ul class="course">
         @foreach (var course in Model)
-            {
-                <li>
-                    <div class="date">
-                        <div class="month">
-                            @course.DateTime.ToString("MM")
-                        </div>
-                        <div class="day">
-                            @course.DateTime.ToString("dd")
-                        </div>
+        {
+            <li>
+                <div class="date">
+                    <div class="month">
+                        @course.DateTime.ToString("MM")
                     </div>
-                    <div class="details">
-                        <span class="lecturer">
-                            @course.Lecturer.Name
-                        </span>
-                        <span class="category">
-                            @course.Category.Name
-                        </span>
-                        <button data-coure-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button> 
+                    <div class="day">
+                        @course.DateTime.ToString("dd")
                     </div>
-                </li>
-            }
+                </div>
+                <div class="details">
+                    <span class="lecturer">
+                        @course.Lecturer.Name
+                        <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.LecturerId">Follow</button>
+                    </span>
+                    <span class="category">
+                        @course.Category.Name
+                    </span>
+                    <button data-coure-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                </div>
+            </li>
+        }
     </ul>
     @section scripts
     {
         <script>
-            $(document).ready(function(){
+            $(document).ready(function () {
                 $(".js-toggle-attendance").click(function (e) {
                     var button = $(e.target);
                     $.post("/api/attendances", { courseId: button.attr("data-course-id") })
@@ -51,8 +52,18 @@
                         .fail(function () {
                             alert("Something failed!");
                         });
-                });              
+                });
+                $(".js-toggle-follow").click(function (e) {
+                    var button = $(e.target);
+                    $.post("/api/followings", { followeedId: button.attr("data-user-id") })
+                        .done(function () {
+                            button.next("Following");
+                        })
+                        .fail(function () {
+                            alert("Something failed");
+                        });
+                });
             });
         </script>
-        }
+    }
 </div>

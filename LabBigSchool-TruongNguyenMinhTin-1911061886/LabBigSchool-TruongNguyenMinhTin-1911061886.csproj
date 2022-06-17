@@ -180,6 +180,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AttendancesController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\FollowingsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="DTOs\AttendanceDto.cs" />
@@ -192,7 +193,7 @@
       <DependentUpon>202206011014506_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202206030131125_CreateTableCourse.cs" />
-    <Compile Include="Migrations\202206030131125_CreateTableCourse.designer.cs">
+    <Compile Include="Migrations\202206030131125_CreateTableCourse.Designer.cs">
       <DependentUpon>202206030131125_CreateTableCourse.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202206030132068_PopulateCategoryTable.cs" />
@@ -206,6 +207,10 @@
     <Compile Include="Migrations\202206150359554_updatedb.cs" />
     <Compile Include="Migrations\202206150359554_updatedb.Designer.cs">
       <DependentUpon>202206150359554_updatedb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206171521594_AddFollowingsTable.cs" />
+    <Compile Include="Migrations\202206171521594_AddFollowingsTable.Designer.cs">
+      <DependentUpon>202206171521594_AddFollowingsTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -313,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206150359554_updatedb.resx">
       <DependentUpon>202206150359554_updatedb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206171521594_AddFollowingsTable.resx">
+      <DependentUpon>202206171521594_AddFollowingsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
